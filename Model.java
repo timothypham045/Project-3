@@ -32,6 +32,16 @@ public class Model {
 
     public void update(boolean keyleft, boolean keyRight, boolean keyUp, boolean keyDown ) {
         link.update(keyleft, keyRight, keyUp, keyDown);
+
+
+     //Test prints   
+    if (!trees.isEmpty()) {
+        System.out.println("First tree: " + trees.get(0));
+    }
+    if (link != null) {
+        System.out.println("Link: " + link);
+    }
+
     }
 
     public Link getLink() 
@@ -126,5 +136,6 @@ public void unmarshal(Json root) {
         trees.add(new Tree(arr.get(i)));  
     }
 }
+
 
 }

@@ -1,6 +1,6 @@
 // Timothy Pham
-// 09-16-25
-// Programming Project 2 - Map Editor 
+// 09-30-25
+// Programming Project 3 - Collision()
 
 public class Tree {
     private int x;
@@ -45,4 +45,9 @@ public class Tree {
     this.w = (int) ob.getLong("w");
     this.h = (int) ob.getLong("h");
 }
+
+    @Override
+    public String toString() {
+        return "Tree(x=" + x + ", y=" + y + ", w=" + w + ", h=" + h + ")";
+    }
 }

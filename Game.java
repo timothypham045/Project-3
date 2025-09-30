@@ -12,6 +12,7 @@ public class Game extends JFrame {
 	private Controller controller;
 	private boolean keepGoing;
 
+	
 	public Game()
 	{
 		model = new Model();
@@ -25,8 +26,16 @@ public class Game extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		keepGoing = true;
+
+		this.setFocusable(true);
+		this.requestFocusInWindow();
+
 		this.addKeyListener(controller);
 		view.addMouseListener(controller);
+		view.addKeyListener(controller);   
+		view.setFocusTraversalKeysEnabled(false);       
+
+		
 	}
 
 	// Game Loop
@@ -36,12 +45,12 @@ public class Game extends JFrame {
 	{
 		keepGoing = controller.update();
 		view.repaint(); 
-		Toolkit.getDefaultToolkit().sync(); // Updates screen
+		Toolkit.getDefaultToolkit().sync(); 
 
 		
 		try
 		{
-			Thread.sleep(50);
+			Thread.sleep(16); //edited from 50 to 16 for Link sprite faster
 		} catch(Exception e) {
 			e.printStackTrace();
 			System.exit(1);
