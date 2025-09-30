@@ -1,23 +1,20 @@
-// Timothy Ph
-// 09-XX-25
-// Assignment 3 - Link character
+// Timothy Pham
+// 09-30-25
+// Assignment 3 - Collision()
 
 public class Link {
-    // world position
     private int x, y;
-    // previous position (for collisions later)
     private int px, py;
-    // pixels per tick
     private double speed = 4.0;
 
-    // animation/facing
+    // animation
     public enum Dir { DOWN, UP, LEFT, RIGHT }
     private Dir facing = Dir.DOWN;
     private boolean moving = false;
-    private int frame = 0;            // 0..4 (5 frames)
-    private int frameTick = 0;        // simple timer
+    private int frame = 0;            
+    private int frameTick = 0;        
 
-    // size (used for collisions later)
+    // size 
     public static final int W = 48;
     public static final int H = 48;
 
@@ -26,9 +23,9 @@ public class Link {
         this.y = startY;
     }
 
-    // called from Model.update with controller key state
+    
     public void update(boolean left, boolean right, boolean up, boolean down) {
-        // remember previous pos (for collisions later)
+        
         px = x; py = y;
 
         int dx = 0, dy = 0;

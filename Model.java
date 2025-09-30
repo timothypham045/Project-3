@@ -1,6 +1,6 @@
 // Timothy Pham
-// 09-16-25
-// Programming Project 2 - Map Editor
+// 09-30-25
+// Programming Project 3 - Collision()
 
 import java.util.ArrayList;
 
@@ -11,8 +11,13 @@ public class Model {
 
     private final ArrayList<Tree> trees;
 
+    private Link link; // Sprite
+
     public Model() {
         trees = new ArrayList<Tree>();
+
+        link = new Link (100, 100);
+
 
         try {
 
@@ -25,8 +30,13 @@ public class Model {
     
 
 
-    public void update() {
-        // empty
+    public void update(boolean keyleft, boolean keyRight, boolean keyUp, boolean keyDown ) {
+        link.update(keyleft, keyRight, keyUp, keyDown);
+    }
+
+    public Link getLink() 
+    {
+        return link;
     }
 
     public void clearTrees() {

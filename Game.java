@@ -1,12 +1,12 @@
 // Timothy Pham
-// 09-16-25
-// Programming Project 2: Map Editor
+// 09-30-25
+// Programming Project 3: Collision()
 
 import javax.swing.JFrame;
 import java.awt.Toolkit;
 
 public class Game extends JFrame {
-	// Member Variables
+	
 	private Model model;
 	private View view;
 	private Controller controller;
@@ -35,11 +35,10 @@ public class Game extends JFrame {
 	do
 	{
 		keepGoing = controller.update();
-		model.update();
-		view.repaint(); // This will indirectly call View.paintComponent
+		view.repaint(); 
 		Toolkit.getDefaultToolkit().sync(); // Updates screen
 
-		// Go to sleep for 50 milliseconds
+		
 		try
 		{
 			Thread.sleep(50);

@@ -1,6 +1,6 @@
 // Timothy Pham
-// 09-16-25
-// Programming Project 2 - Map Editor 
+// 09-30-25
+// Programming Project 3 - Collision () 
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -30,7 +30,7 @@ public class View extends JPanel {
     private BufferedImage treeImage;
     private Model model;
     private Controller controller;
-
+    private BufferedImage[] linkDown, linkUp, linkLeft, linkRight;
     public View(Model m, Controller c) {
         this.model = m;
         this.controller = c;
@@ -38,7 +38,20 @@ public class View extends JPanel {
     setBackground(new Color(60, 120, 60));
 
         try {
-            treeImage = ImageIO.read(new File("images/tree.png"));
+
+        treeImage = ImageIO.read(new File("images/tree.png"));
+
+        linkDown = new BufferedImage[5];
+        linkUp = new BufferedImage[5];
+        linkLeft = new BufferedImage[5];
+        linkRight = new BufferedImage[5];
+        
+        for (int i = 0; i < 5; i++) {
+            linkDown[i] = ImageIO.read(new File("im"));
+            linkUp[i] = ImageIO.read(new File("im"));
+            linkLeft[i] = ImageIO.read(new File("im"));
+            linkRight[i] = ImageIO.read(new File("im"));
+        }
         } catch (Exception e) {
             e.printStackTrace(System.err);
         }

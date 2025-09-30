@@ -1,4 +1,4 @@
 #!/bin/bash
 set -u -e
-javac Game.java View.java Controller.java Model.java Json.java
+javac Game.java View.java Controller.java Model.java Json.java Link.java
 java Game
