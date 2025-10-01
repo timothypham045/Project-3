@@ -30,7 +30,7 @@ public class Model {
     
 
 
-    public void update(boolean keyleft, boolean keyRight, boolean keyUp, boolean keyDown ) {
+    public void update(boolean keyleft, boolean keyRight, boolean keyUp, boolean keyDown, boolean left, boolean right, boolean up, boolean down ) {
         link.update(keyleft, keyRight, keyUp, keyDown);
 
 
@@ -38,7 +38,7 @@ public class Model {
     if (!trees.isEmpty()) {
         System.out.println("First tree: " + trees.get(0));
     }
-    if (link != null) {
+    if (link != null) link.update(left, right, up, down, trees); {
         System.out.println("Link: " + link);
     }
 

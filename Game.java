@@ -44,6 +44,13 @@ public class Game extends JFrame {
 	do
 	{
 		keepGoing = controller.update();
+		model.update(
+        controller.isKeyLeft(),
+        controller.isKeyRight(),
+        controller.isKeyUp(),
+        controller.isKeyDown()
+    );
+		view.centerOn(model.getLink().getX(), model.getLink().getY());
 		view.repaint(); 
 		Toolkit.getDefaultToolkit().sync(); 
 

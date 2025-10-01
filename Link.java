@@ -42,6 +42,22 @@ public class Link {
         if (dx != 0) x += (int)Math.round(speed * Math.signum(dx));
         if (dy != 0) y += (int)Math.round(speed * Math.signum(dy));
 
+        for (Tree t : trees) {
+            if (overlaps(x, y, W, H, t.getx(), t.getY(), t.getW(), t.getH())) {
+                if (px + W <= t.getX()) {
+                    x = t.getX() - W;
+                } else if (px >= t.getX() + t.getW()) {
+                    x = t.getX() + t.getW();
+                } else if (py + H <= t.getY()) {
+                    y = t.getY() - H;
+                } else if (py >= t.getY() + t.getH()) {
+                    y = t.getY() + t.getH();
+                }
+            }
+
+
+
+        }
         if (moving) {
             frameTick++;
             if (frameTick % 3 == 0) {
